@@ -196,10 +196,12 @@ function onItemEdit(item) {
 }
 
 function deleteItem(item) {
-  item.remove();
-  deleteFromLocalStorage(item.getAttribute("data-key"));
-  if (isEditing) onCancelEdit();
-  reloadList();
+  if (confirm("Remove item from resume?")) {
+    item.remove();
+    deleteFromLocalStorage(item.getAttribute("data-key"));
+    if (isEditing) onCancelEdit();
+    reloadList();
+  }
 }
 
 function deleteFromLocalStorage(index) {
@@ -209,12 +211,13 @@ function deleteFromLocalStorage(index) {
 }
 
 function clearList() {
-  while (itemList.firstChild) {
-    itemList.removeChild(itemList.firstChild);
+  if (confirm("Clear resume? You cannot undo this action.")) {
+    while (itemList.firstChild) {
+      itemList.removeChild(itemList.firstChild);
+    }
+    localStorage.removeItem("items");
+    reloadList();
   }
-
-  localStorage.removeItem("items");
-  reloadList();
 }
 
 function reloadList() {
