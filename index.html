@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Resume Builder</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Resume Builder</h1>
+      </header>
+      <form id="resume-form">
+        <div class="form-control">
+          <label for="job-title">Job Title</label>
+          <input
+            class="form-input"
+            id="job-title-input"
+            name="job-title"
+            type="text"
+            required
+          />
+
+          <label for="company">Company</label>
+          <input
+            class="form-input"
+            id="company-input"
+            name="company"
+            type="text"
+            required
+          />
+
+          <div class="content-box">
+            <label for="company">Employment Period</label>
+            <div class="date-fields">
+              <input
+                class="form-input date"
+                id="employment-start-input"
+                name="employment-start"
+                type="text"
+                required
+              />
+              to
+              <input
+                class="form-input date"
+                id="employment-end-input"
+                name="employment-end"
+                type="text"
+                required
+              />
+            </div>
+            </div>
+
+          <label for="company">Summary of responsibilities</label>
+          <input
+            class="form-input responsibilities"
+            id="responsibilities-input"
+            name="company"
+            type="responsibilities"
+          />
+        </div>
+        <div class="form-buttons-container">
+          <button type="submit" class="add-btn btn">
+            <i class="fa-solid fa-plus"></i> Add Item
+          </button>
+          <button type="button" class="cancel-btn btn">Cancel</button>
+        </div>
+      </form>
+      <ul id="resume-list" class="resume-list"></ul>
+      <button id="clear" class="clear-btn">Clear All</button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

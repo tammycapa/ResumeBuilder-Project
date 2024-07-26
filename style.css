@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+  
+  header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  header h1 {
+    font-weight: 700;
+  }
+  
+  .container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+  }
+  
+  
+  .form-buttons-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .content-box {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content-box .date-fields{
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+  
+  .form-input {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .form-input.date {
+    width: 100%;
+  }
+  
+  .form-input.responsibilities {
+    height: 150px;
+  }
+  
+  .btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .cancel-btn {
+    display: none;
+  }
+  
+  .row-btn {
+    font-size: 16px;
+    background-color: transparent;
+    color: #333;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  .clear-btn {
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16px;
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .clear-btn:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .text-red {
+    color: red;
+  }
+  
+  .text-green {
+    color: green;
+  }
+  
+  .resume-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  .resume-list li {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 0 5px 20px;
+  }
+  
+  .row-body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 85%;
+  }
+  
+  .title-container {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .date-container {
+    font-size: 15px;
+    font-style: italic;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 9%;
+  }
+  
+  .resume-list li button {
+    cursor: pointer;
+  }
+  
+  .edit-mode,
+  .edit-mode .buttons-container .row-btn {
+    color: #ccc;
+    cursor: default;
+  }
