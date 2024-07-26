@@ -198,6 +198,7 @@ function onItemEdit(item) {
 function deleteItem(item) {
   item.remove();
   deleteFromLocalStorage(item.getAttribute("data-key"));
+  if (isEditing) onCancelEdit();
   reloadList();
 }
 
