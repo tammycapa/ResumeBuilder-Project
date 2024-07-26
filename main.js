@@ -31,6 +31,8 @@ function onAddItem(e) {
   // Check if user is currently editing a resume item
   if (isEditing) {
     const itemToEdit = itemList.querySelector(".edit-mode");
+
+    // Get index of item being edited
     idx = itemToEdit.getAttribute("data-key");
     deleteFromLocalStorage(idx);
     itemToEdit.classList.remove("edit-mode");
@@ -60,18 +62,21 @@ function addItemToDOM(
   const rowBody = document.createElement("div");
   rowBody.classList.add("row-body");
 
+  // Add job title and company name
   const titleDiv = document.createElement("div");
   titleDiv.classList.add("title-container");
   titleDiv.appendChild(document.createTextNode(jobTitle));
   titleDiv.appendChild(document.createTextNode(" at "));
   titleDiv.appendChild(document.createTextNode(company));
 
+  // Add duration of work experience
   const periodDiv = document.createElement("div");
   periodDiv.classList.add("date-container");
   periodDiv.appendChild(document.createTextNode(startDate));
   periodDiv.appendChild(document.createTextNode(" to "));
   periodDiv.appendChild(document.createTextNode(endDate));
 
+  // Add summary of work responsibilities
   const summaryDiv = document.createElement("div");
   summaryDiv.classList.add("summary-container");
   summaryDiv.appendChild(document.createTextNode(responsibilities));
@@ -212,6 +217,7 @@ function clearList() {
     itemList.removeChild(itemList.firstChild);
   }
 
+  // Remove items from local storage
   localStorage.removeItem("items");
   reloadList();
 }
