@@ -199,6 +199,7 @@ function deleteItem(item) {
   if (confirm("Remove item from resume?")) {
     item.remove();
     deleteFromLocalStorage(item.getAttribute("data-key"));
+    if (isEditing) onCancelEdit();
     reloadList();
   }
 }
