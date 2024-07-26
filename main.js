@@ -1,13 +1,13 @@
-const itemForm = document.getElementById("resume-form");
-const jobTitleInput = document.getElementById("job-title-input");
-const companyInput = document.getElementById("company-input");
-const employmentStartInput = document.getElementById("employment-start-input");
-const employmentEndInput = document.getElementById("employment-end-input");
-const responsibilitiesInput = document.getElementById("responsibilities-input");
-const itemList = document.getElementById("resume-list");
-const clearBtn = document.getElementById("clear");
-const formBtn = itemForm.querySelector(".add-btn");
-const cancelEditBtn = itemForm.querySelector(".cancel-btn");
+let itemForm,
+  jobTitleInput,
+  companInput,
+  employmentStartInput,
+  employmentEndInput,
+  responsibilitiesInput,
+  itemList,
+  clearBtn,
+  formBtn,
+  cancelEditBtn;
 let isEditing = false;
 
 function diplayList() {
@@ -250,6 +250,17 @@ function reloadList() {
 
 // Initialise application
 function init() {
+  itemForm = document.getElementById("resume-form");
+  jobTitleInput = document.getElementById("job-title-input");
+  companyInput = document.getElementById("company-input");
+  employmentStartInput = document.getElementById("employment-start-input");
+  employmentEndInput = document.getElementById("employment-end-input");
+  responsibilitiesInput = document.getElementById("responsibilities-input");
+  itemList = document.getElementById("resume-list");
+  clearBtn = document.getElementById("clear");
+  formBtn = itemForm.querySelector(".add-btn");
+  cancelEditBtn = itemForm.querySelector(".cancel-btn");
+
   itemForm.addEventListener("submit", onAddItem);
   itemList.addEventListener("click", onClickItem);
   clearBtn.addEventListener("click", clearList);
@@ -259,4 +270,8 @@ function init() {
   reloadList();
 }
 
-init();
+if (typeof window !== "undefined" && !window.__TEST__) {
+  init();
+}
+
+module.exports = { getItemsFromStorage, init };
