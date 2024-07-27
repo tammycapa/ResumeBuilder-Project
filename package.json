@@ -2,7 +2,7 @@
   "name": "resumebuilder-project",
   "version": "1.0.0",
   "description": "DOT503 DevOps Tools Assessment 2",
-  "main": "main.js",
+  "main": "electron-main.js",
   "scripts": {
     "test": "jest"
   },
@@ -20,6 +20,9 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.6",
     "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0"
+    "jest-environment-jsdom": "^29.7.0",
+    "electron": "^31.3.0",
+    "electron-builder": "^24.13.3",
+    "electron-packager": "^17.1.2"
   }
 }

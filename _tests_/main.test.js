@@ -1,4 +1,4 @@
-const { getItemsFromStorage, init } = require("../main");
+const { getItemsFromStorage, init } = require("../src/main");
 
 describe("Resume Builder Tests", () => {
   beforeEach(() => {
