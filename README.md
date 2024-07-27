@@ -31,7 +31,7 @@ npm install
 - Run `./build.bat`
 
 Executable file will be generated inside the **resume-builder** folder inside **'resume-builder-darwin-x64'** for macOS
-or **'resume-builder-darwin-x64'** for Windows. 
+or **'resume-builder-win32-x64'** for Windows. 
 
 More detailed instructions for running the build script can be found in **Readme.txt**.
 
