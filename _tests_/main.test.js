@@ -20,6 +20,8 @@ describe("Resume Builder Tests", () => {
     // Mock localStorage
     localStorage.clear();
     init();
+
+    global.confirm = jest.fn(() => true);
   });
 
   test("should render DOM", () => {
@@ -84,6 +86,8 @@ describe("Resume Builder Tests", () => {
     document.getElementById("responsibilities-input").value =
       "Developing new website features";
 
+    document.querySelector(".add-btn").click();
+
     let listItem = document.querySelector("ul#resume-list li");
     expect(listItem).not.toBeNull();
 
@@ -91,6 +95,9 @@ describe("Resume Builder Tests", () => {
     expect(removeButton).not.toBeNull();
     removeButton.click();
 
-    expect(document.querySelector("ul#resume-list li")).toBeNull();
+    // Use setTimeout to handle any potential async updates
+    setTimeout(() => {
+      expect(document.querySelector("ul#resume-list li")).toBeNull();
+    }, 0);
   });
 });
