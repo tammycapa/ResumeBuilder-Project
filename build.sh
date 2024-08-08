@@ -1,18 +1,15 @@
-# Ensure Node.js and npm are available
-export PATH=$PATH:/usr/local/bin/
-
 # Delete executable if existing in order to prevent test from duplicating
 rm -rf resume_builder
 
 # Run unit tests and save results in a text file
-echo -e "\n========== Running unit tests... ==========\n"
+echo "\n========== Running unit tests... ==========\n"
 npx jest _tests_/main.test.js --coverage
 
 # Check if tests passed
 if [ $? -eq 0 ]; then
-  echo -e "\nUnit test complete. ALL tests PASSED."
+  echo "\nUnit test complete. ALL tests PASSED."
     # Package application
-  echo -e "\n========== Packaging application... ==========\n"
+  echo "\n========== Packaging application... ==========\n"
 
   npx electron-packager . resume-builder \
     --platform=darwin \
@@ -20,10 +17,10 @@ if [ $? -eq 0 ]; then
     --out=resume_builder \
     --overwrite
 
-  echo -e "\Build SUCCESSFUL\n"
-  echo -e "\nExecutable file 'resume-builder.app' successfully created!\n"
+  echo "\Build SUCCESSFUL\n"
+  echo "\nExecutable file 'resume-builder.app' successfully created!\n"
 else
-  echo -e "\nUnit test complete. SOME tests FAILED.\n"
-  echo -e "\nBuild FAILED.\n"
+  echo "\nUnit test complete. SOME tests FAILED.\n"
+  echo "\nBuild FAILED due to failint unit test.\n"
   exit 1
 fi
