@@ -21,6 +21,6 @@ if [ $? -eq 0 ]; then
   echo "\nExecutable file 'resume-builder.app' successfully created!\n"
 else
   echo "\nUnit test complete. SOME tests FAILED.\n"
-  echo "\nBuild FAILED due to failint unit test.\n"
+  echo "\nBuild FAILED due to failing unit test.\n"
   exit 1
 fi
