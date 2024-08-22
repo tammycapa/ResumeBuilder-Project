@@ -1,5 +1,7 @@
 Intsructions to Run Build Script/s.
 
+Test
+
 Prerequisites:
 The build script utilises Jest for unit testing and Electron for packaging.
 Install these by running 'npm install' in the root folder.
